@@ -1,0 +1,77 @@
+{
+  "name": "blinkmind",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Приложение для отслеживания концентрации и продуктивности с помодоро-таймером",
+  "author": "Your Name",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron:dev": "electron .",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "zustand": "^4.4.0",
+    "@mediapipe/face_mesh": "^0.4.0",
+    "@mediapipe/camera_utils": "^0.3.0",
+    "@mediapipe/drawing_utils": "^0.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.0",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "typescript": "^5.3.0",
+    "typescript-eslint": "^8.45.0",
+    "vite": "^5.0.0",
+    "vite-plugin-electron": "^0.28.0"
+  },
+  "build": {
+    "appId": "com.blinkmind.app",
+    "productName": "BlinkMind",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "mac": {
+      "target": ["dmg"],
+      "icon": "build/icon.icns",
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "icon": "build/icon.png",
+      "category": "Office"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.camera-stream {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.camera-stream__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.camera-stream__header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.status-indicator {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status--active {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status--inactive {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.status--error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.camera-stream__canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-stream__canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.camera-stream__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.metric-card {
+  background: #f5f5f5;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.metric-card__label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.metric-card__value {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.metric-card__subtitle {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Overlay для запроса доступа к камере */
+.camera-request-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  border-radius: 8px;
+}
+
+.camera-request-content {
+  text-align: center;
+  padding: 40px;
+  max-width: 400px;
+}
+
+.camera-request-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.camera-request-content h4 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.camera-request-content p {
+  margin: 0 0 24px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.camera-request-button {
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #2196f3;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.camera-request-button:hover:not(:disabled) {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+.camera-request-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.camera-request-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.camera-request-error {
+  margin-top: 16px;
+  padding: 12px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Переключатель индикатора моргания */
+.blink-indicator-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 20;
+}
+
+.blink-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.blink-toggle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #fff;
+}
+
+.blink-toggle-btn--active {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  border-color: #fff;
+}
+
+.blink-toggle-btn--active:hover {
+  background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.5);
+}
+
+.blink-toggle-icon {
+  font-size: 20px;
+  line-height: 1;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+

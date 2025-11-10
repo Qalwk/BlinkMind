@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FocusTracker - Background Tracker</title>
+    
+    <!-- MediaPipe Face Mesh для трекинга в фоновом окне -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    
+    <!-- Проверка загрузки MediaPipe -->
+    <script>
+      window.addEventListener('load', () => {
+        console.log('[Tracker HTML] Проверка MediaPipe...')
+        console.log('[Tracker HTML] window.FaceMesh:', typeof window.FaceMesh !== 'undefined' ? '✓ Загружен' : '✗ НЕ загружен')
+        console.log('[Tracker HTML] window.Camera:', typeof window.Camera !== 'undefined' ? '✓ Загружен' : '✗ НЕ загружен')
+        
+        if (typeof window.FaceMesh === 'undefined') {
+          console.error('[Tracker HTML] ❌ MediaPipe FaceMesh не загружен!')
+          console.error('[Tracker HTML] Проверьте интернет соединение и CORS настройки')
+        } else {
+          console.log('[Tracker HTML] ✅ MediaPipe готов к использованию')
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <div id="tracker-root"></div>
+    <video id="tracker-video" style="display: none;" autoplay muted playsinline></video>
+    <canvas id="tracker-canvas" style="display: none;"></canvas>
+    <script type="module" src="/src/tracker.tsx"></script>
+  </body>
+</html>
+

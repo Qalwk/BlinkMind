@@ -1,0 +1,36 @@
+.pomodoro-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+.pomodoro-page__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.pomodoro-page__timer {
+  grid-column: 1 / -1;
+}
+
+.pomodoro-page__settings {
+  grid-column: 1;
+}
+
+.pomodoro-page__stats {
+  grid-column: 2;
+}
+
+@media (max-width: 1024px) {
+  .pomodoro-page__main {
+    grid-template-columns: 1fr;
+  }
+
+  .pomodoro-page__settings,
+  .pomodoro-page__stats {
+    grid-column: 1;
+  }
+}
+

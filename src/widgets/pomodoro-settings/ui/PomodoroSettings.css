@@ -1,0 +1,226 @@
+.pomodoro-settings {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pomodoro-settings__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pomodoro-settings__header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.pomodoro-settings__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pomodoro-settings__section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pomodoro-settings__section-title {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pomodoro-settings__divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 4px 0;
+}
+
+.pomodoro-setting {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pomodoro-setting__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pomodoro-setting__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.pomodoro-setting__value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #667eea;
+  min-width: 60px;
+  text-align: right;
+}
+
+.pomodoro-setting__input {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #e0e0e0;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.pomodoro-setting__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.pomodoro-setting__input::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.pomodoro-setting__input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s;
+}
+
+.pomodoro-setting__input::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+.pomodoro-setting__description {
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+  line-height: 1.4;
+}
+
+.pomodoro-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.pomodoro-toggle:hover {
+  background: #f0f1f3;
+}
+
+.pomodoro-toggle__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+}
+
+.pomodoro-toggle__description {
+  font-size: 12px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.pomodoro-toggle__switch {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  background: #ccc;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.pomodoro-toggle__switch--active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.pomodoro-toggle__slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.pomodoro-toggle__switch--active .pomodoro-toggle__slider {
+  transform: translateX(20px);
+}
+
+.pomodoro-settings__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pomodoro-settings__button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pomodoro-settings__button--reset {
+  background: #f5f5f5;
+  color: #666;
+  flex: 1;
+}
+
+.pomodoro-settings__button--reset:hover {
+  background: #e0e0e0;
+}
+
+.pomodoro-settings__info {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.pomodoro-settings__info-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1976d2;
+  margin: 0 0 4px 0;
+}
+
+.pomodoro-settings__info-text {
+  font-size: 12px;
+  color: #0d47a1;
+  line-height: 1.4;
+  margin: 0;
+}
+
