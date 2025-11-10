@@ -34,7 +34,7 @@
 
 ### Для пользователей
 
-Скачайте готовое приложение на странице [Releases](https://github.com/ваш-username/BlinkMind/releases/latest):
+Скачайте готовое приложение на странице [Releases](https://github.com/Qalwk/BlinkMind/releases/latest):
 
 - **Windows:** `BlinkMind-Setup-X.X.X.exe`
 - **macOS:** `BlinkMind-X.X.X.dmg`
