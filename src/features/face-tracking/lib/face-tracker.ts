@@ -69,9 +69,10 @@ export class FaceTracker {
       }
 
       // Создание Face Mesh instance
+      // Используем unpkg.com как альтернативу jsdelivr
       this.faceMesh = new FaceMesh({
         locateFile: (file: string) => {
-          return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`
+          return `https://unpkg.com/@mediapipe/face_mesh@0.4.1633559619/${file}`
         }
       })
 
